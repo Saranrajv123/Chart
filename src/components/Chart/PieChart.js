@@ -24,21 +24,21 @@ class PieChart extends Component {
 
             nextAngle = startAngle;
             angle = (slice / sum) * 360;
-            percentage = (slice / sum) / 100;
+            percentage = (slice / sum) * 100;
             startAngle += angle;
             
             return <Slice
                 key={`#Key${index}`}
                 value={slice}
                 percentage={this.props.percentage}
-                percentValue={percentage.toFixed(1)}
+                percentValue={percentage.toFixed(2)}
                 startAngle={nextAngle}
                 angle={angle}
                 radius={radius}
                 hole={radius - hole}
                 trueHole={hole}
                 showLabel={label}
-                fill={colors[index ]}
+                fill={colors[index]}
                 stroke={this.props.stroke}
                 strokeWidth={this.props.strokeWidth}
             />
